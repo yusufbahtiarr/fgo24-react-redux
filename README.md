@@ -1,8 +1,9 @@
 # React Example Project
-This repository contains React project Minitask 5 with React Hook Form example. This project deals with the creation of smoker forms with various types of input types by implementing useState() as a data container.
+This repository contains React project Minitask 5 with React Hook Form, useState, useEffect example. This project implements the creation of a cigarette survey form with 2 pages, the first page contains the cigarette survey form, the second page contains the cigarette survey results.
 
 ## Preview
 ![Preview](Screenshot.png)
+![Preview](Screenshot1.png)
 
 ## How to Run this project
 
