@@ -4,12 +4,35 @@ import { Link } from 'react-router-dom'
 function ResultFormPage() {
   const [data, setData] = useState([]);
   
-    useEffect(() => {
-      const data = localStorage.getItem('dataSurvey')
-      setData(JSON.parse(data));
+    // useEffect(() => {
+    //   const data = localStorage.getItem('dataSurvey')
+    //   setData(JSON.parse(data));
 
-    }, []);
+    // }, []);
   
+  useEffect(() => {
+    const loadSurveyData = () => {
+      try {
+        const savedData = localStorage.getItem('dataSurvey');
+        if (savedData) {
+          return JSON.parse(savedData);
+        }
+        return null;
+      } catch (error) {
+        console.error("Error loading survey data:", error);
+        return null;
+      }
+    };
+
+    const surveyData = loadSurveyData();
+    if (surveyData) {
+      setData(surveyData);
+    } else {
+      console.warn("No survey data found in localStorage");
+      // Redirect ke form jika data tidak ada
+      // window.location.href = '/survey-form';
+    }
+  }, []);
 return (
     <div className='w-screen h-screen p-0 m-0 box-border overflow-hidden'>
       <div className='flex flex-col w-full h-full justify-start items-center mx-auto p-8 gap-6 bg-slate-100'>
