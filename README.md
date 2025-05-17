@@ -1,5 +1,5 @@
 # React Example Project
-This repository contains React project Minitask 5 with React Hook Form, useState, useEffect example. This project implements the creation of a cigarette survey form with 2 pages, the first page contains the cigarette survey form, the second page contains the cigarette survey results.
+This repository contains React project Minitask 5 with React Hook Form, useState, useEffect, yupResolver example. This project implements the creation of a cigarette survey form with 2 pages, the first page contains the cigarette survey form, the second page contains the cigarette survey results.
 
 ## Preview
 ![Preview](Screenshot.png)

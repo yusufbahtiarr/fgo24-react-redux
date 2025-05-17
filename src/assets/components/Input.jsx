@@ -1,21 +1,27 @@
-import { Fragment } from "react"
+import { Fragment } from "react";
 
 /**
- * 
- * @param {InputProps} props 
+ *
+ * @param {InputProps} props
  * @param {string} props.label
- * @returns 
+ * @returns
  */
 
-
-function Input({type, name, id, label, ...props}) {
-  
+function Input({ type, name, id, label, ...props }) {
   return (
     <>
-    <label htmlFor={id}>{label}</label>
-    <input className='py-2 px-4 outline-0 font-sans border border-slate-400' type={type} name={name} id={id} {...props} />
+      <label htmlFor={id} className="text-lg font-light">
+        {label}
+      </label>
+      <input
+        className="text-lg font-light py-2 px-4 outline-0 font-sans border-b-2 border-slate-400"
+        type={type}
+        name={name}
+        id={id}
+        {...props}
+      />
     </>
-  )
+  );
 }
 
-export default Input
+export default Input;

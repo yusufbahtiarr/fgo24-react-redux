@@ -35,16 +35,16 @@ function ResultFormPage() {
   }, []);
 return (
     <div className='w-screen h-screen p-0 m-0 box-border overflow-hidden'>
-      <div className='flex flex-col w-full h-full justify-start items-center mx-auto p-8 gap-6 bg-slate-100'>
-      <div className='bg-slate-800 w-200 text-center p-8 rounded text-amber-50  text-3xl gap-2'>Result Form</div>
+      <div className='flex flex-col w-full h-full justify-start items-center mx-auto p-8 gap-6 bg-slate-00'>
+      <div className='bg-slate-700 w-200 text-center p-8 rounded rounded-bl-4xl rounded-tr-4xl text-slate-100  text-3xl gap-2'>Result Form Survey Rokok</div>
       <table className='w-200 border border-slate-500'>
       <thead>
         <tr>
-          <th className='p-2 border border-slate-500'>Nama</th>
-          <th className='p-2 border border-slate-500'>Umur</th>
-          <th className='p-2 border border-slate-500'>Jenis Kelamin</th>
-          <th className='p-2 border border-slate-500'>Perokok</th>
-          <th className='p-2 border border-slate-500'>Rokok</th>
+          <th className='p-2 border border-slate-500 bg-slate-200'>Nama</th>
+          <th className='p-2 border border-slate-500 bg-slate-200'>Umur</th>
+          <th className='p-2 border border-slate-500 bg-slate-200'>Jenis Kelamin</th>
+          <th className='p-2 border border-slate-500 bg-slate-200'>Perokok</th>
+          <th className='p-2 border border-slate-500 bg-slate-200'>Rokok</th>
         </tr>
       </thead>
       <tbody>
