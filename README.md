@@ -12,13 +12,13 @@ This repository contains React project Minitask with React Hook Form, Global Sta
 1. Clone this project
 
 ```
-git clone https://github.com/yusufbahtiarr/fgo24-react-form.git
+git clone https://github.com/yusufbahtiarr/fgo24-react-redux.git
 ```
 
 2. Enter the project directory
 
 ```
-cd fgo24-react-form
+cd fgo24-react-redux
 ```
 
 3. Install the Depedencies
