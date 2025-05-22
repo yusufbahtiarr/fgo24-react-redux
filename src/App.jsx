@@ -1,23 +1,27 @@
-
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './App.css'
-import FormSurveyPage from './assets/pages/FormSurveyPage'
-import ResultFormPage from './assets/pages/ResultFormPage'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import FormSurveyPage from "./assets/pages/FormSurveyPage";
+import ResultFormPage from "./assets/pages/ResultFormPage";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <FormSurveyPage />
+    element: <FormSurveyPage />,
   },
   {
     path: "/result",
-    element: <ResultFormPage />
-  }
-])
-
+    element: <ResultFormPage />,
+  },
+]);
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
 
-export default App
+export default App;

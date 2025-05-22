@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Input from "./../components/Input";
 import Option from "../components/Option";
@@ -6,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Card from "../components/Card";
+import { useDispatch } from "react-redux";
+import { addSurvey } from "../../redux/reducers/survey";
 
 const validation = yup.object({
   name: yup
@@ -25,10 +26,12 @@ const validation = yup.object({
     .mixed()
     .oneOf(["Ya", "Tidak"])
     .required("Harus dipilih salah satunya!"),
-  cigarette: yup.array().notRequired(),
+  cigars: yup.array().notRequired(),
 });
 
 function FormSurveyPage() {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -37,33 +40,25 @@ function FormSurveyPage() {
   } = useForm({
     resolver: yupResolver(validation),
   });
-  const [data, setData] = React.useState([]);
+  // const [data, setData] = React.useState([]);
 
-  useEffect(() => {
-    const savedData = localStorage.getItem("dataSurvey");
-    if (savedData) {
-      setData(JSON.parse(savedData));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedData = localStorage.getItem("dataSurvey");
+  //   if (savedData) {
+  //     setData(JSON.parse(savedData));
+  //   }
+  // }, []);
 
-  const onSubmit = (formData) => {
-    let sanitization = -1;
-    if (formData.age < 0) {
-      sanitization *= formData.age;
-    } else {
-      sanitization = formData.age;
-    }
-    formData.age = sanitization;
-    const newData = [...data, formData];
-    setData(newData);
-    localStorage.setItem("dataSurvey", JSON.stringify(newData));
+  function saveData(value) {
+    dispatch(addSurvey(value));
+    console.log(value);
     reset();
-  };
+  }
 
   return (
     <div className="w-screen h-screen p-0 m-0 box-border overflow-x-hidden">
       <div className="flex flex-col w-full justify-start items-center mx-auto p-8 gap-6 bg-slate-400">
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit(saveData)}>
           <div className="relative bg-slate-700 w-200 text-center z-10 p-8 rounded rounded-bl-4xl rounded-tr-4xl text-amber-50  text-3xl gap-2  overflow-hidden">
             <div className="absolute bg-slate-900 w-198 h-3 top-0 left-0 z-[-1] rounded rounded-tr-full"></div>
             Form Survey Rokok
@@ -131,12 +126,12 @@ function FormSurveyPage() {
           </Card>
           <Card>
             <Option
-              {...register("cigarette")}
+              {...register("cigars")}
               className="gap-2 text-7xl"
               type="checkbox"
               label="Jika Anda perokok, rokok apa yang pernah Anda coba?"
-              name="cigarette"
-              id="cigarette"
+              name="cigars"
+              id="cigars"
               value={[
                 "Gudang Garam Filter",
                 "Lucky Strike",
