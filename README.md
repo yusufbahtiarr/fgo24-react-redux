@@ -67,9 +67,16 @@ docker run -p 8080:80 -d reactredux:latest
 
 ## Dependencies
 
-This project using nodejs to run, so make sure to install node on your machine.
+To develop this app, we are using some dependencies:
 
-- live-server: to mock http server in local environtment
+- ReactJS
+- TailwindCSS
+- Redux Toolkit
+- React Hook Form
+
+And frontend tooling, the one and only:
+
+- Vite
 
 ## How to Contribute
 
